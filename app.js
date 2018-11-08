@@ -10,15 +10,45 @@
 var bsurl = require('utils-net/bsurl.js');
 var nt = require('utils-net/nt.js')
 App({
-    
-  onLaunch: function () {
+    onLaunch: function () {
     //调用API从本地缓存中获取数据
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    
-
-    
+    var cookie = wx.getStorageSync('cookie') || '';
+    var gb = wx.getStorageSync("globalData");
+    gb && (this.globalData = gb)
+    this.globalData.cookie = cookie
+    var that = this;
+    //播放列表中下一首
+    wx.onBackgroundAudioStop(function () {
+      if (that.globalData.globalStop) {
+        return;
+      }
+      if (that.globalData.playtype != 2) {
+        that.nextplay(that.globalData.playtype);
+      } else {
+        that.nextfm();
+      }
+    });
+    //监听音乐暂停，保存播放进度广播暂停状态
+    wx.onBackgroundAudioPause(function () {
+      nt.postNotificationName("music_toggle", {
+        playing: false,
+        playtype: that.globalData.playtype,
+        music: that.globalData.curplay || {}
+      });
+      that.globalData.playing = false;
+      that.globalData.globalStop = that.globalData.hide ? true : false;
+      wx.getBackgroundAudioPlayerState({
+        complete: function (res) {
+          that.globalData.currentPosition = res.currentPosition ? res.currentPosition : 0
+        }
+      })
+    });
+    this.mine();
+    this.likelist();
+    //this.loginrefresh();
   },
   getUserInfo:function(cb){
     var that = this
@@ -41,7 +71,7 @@ App({
     mine: function(){
     var that = this;
     wx.request({
-      url: bsurl + '/login/refresh',
+      url: bsurl + 'mine',
       success: function (res) {
         that.globalData.user=res.data;
         wx.setStorageSync('user',res.data)
@@ -49,6 +79,16 @@ App({
     })
   },
     //网易云音乐
+  mine: function(){
+    var that = this;
+    wx.request({
+      url: bsurl + 'mine',
+      success: function (res) {
+        that.globalData.user=res.data;
+        wx.setStorageSync('user',res.data)
+      }
+    })
+  },
   loginrefresh: function () {
     wx.request({
       url: bsurl + 'login/refresh',
