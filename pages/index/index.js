@@ -1,13 +1,13 @@
 /*
  * 
  * WordPres版微信小程序
- * author: jianbo
- * organization: 守望轩  www.watch-life.net
- * github:    https://github.com/iamxjb/winxin-app-watch-life.net
- * 技术支持微信号：iamxjb
+
+ * organization: 蜷缩的蜗牛  www.alongparty.cn
+ * github:    https://github.com//winxin-app-watch-life.net
+ * 技术支持微信号：
  * 开源协议：MIT
  * 
- *  *Copyright (c) 2017 https://www.watch-life.net All rights reserved.
+ *  *Copyright (c) 2017 https://www.alongparty.cn All rights reserved.
  */
 
 var Api = require('../../utils/api.js');
@@ -70,7 +70,7 @@ Page({
   },
   onShareAppMessage: function () {
     return {
-      title: '“' + config.getWebsiteName+'”网站微信小程序,基于WordPress版小程序构建.技术支持：www.watch-life.net',
+      title: '“' + config.getWebsiteName+'”网站微信小程序,基于WordPress版小程序构建.技术支持：www.alongparty.cn',
       path: 'pages/index/index',
       success: function (res) {
         // 转发成功
