@@ -1,0 +1,87 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/detail/detail",
+        "pages/logs/logs",
+        "pages/page/page",
+        "pages/about/about",
+        "pages/list/list",
+        "pages/topic/topic",
+        "pages/readlog/readlog",
+        "pages/hot/hot",
+        "pages/pay/pay",
+        "pages/webpage/webpage",
+        "pages/comments/comments",
+        "pages/poster/poster",
+        "page/component/home/index",
+        "page/component/user/index",
+        "page/component/playlist/index",
+        "page/component/mv/index",
+        "page/component/playing/index",
+        "page/component/login/index",
+        "page/component/fm/index",
+        "page/component/toplist/index",
+        "page/component/recommend/index",
+        "page/component/search/index",
+        "page/component/album/index",
+        "page/component/artist/index",
+        "page/component/recsongs/index",
+        "page/component/record/index",
+        "page/component/me/index",
+        "page/component/cloud/index",
+        "page/component/program/index",
+        "page/component/djradio/index",
+        "page/component/simi/index",
+        "page/component/new/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#118fff",
+        "navigationBarTitleText": "蜷缩的蜗牛",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#9BABBA",
+        "selectedColor": "#495056",
+        "borderStyle": "white",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "images/tar-home.png",
+                "selectedIconPath": "images/tar-home-on.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/topic/topic",
+                "iconPath": "images/tar-topic.png",
+                "selectedIconPath": "images/tar-topic-on.png",
+                "text": "专题"
+            },
+            {
+                "pagePath": "pages/readlog/readlog",
+                "iconPath": "images/tar-person.png",
+                "selectedIconPath": "images/tar-person-on.png",
+                "text": "我的"
+            },
+            {
+              "pagePath": "page/component/home/index",
+              "iconPath": "image/cm2_btm_icn_discovery.png",
+              "selectedIconPath": "image/cm2_btm_icn_discovery_prs.png",
+              "text": "发现音乐"
+            },
+            {
+              "pagePath": "page/component/me/index",
+              "iconPath": "image/cm2_btm_icn_music.png",
+              "selectedIconPath": "image/cm2_btm_icn_music_prs.png",
+              "text": "我的音乐"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    }
+}
