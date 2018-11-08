@@ -41,7 +41,7 @@ App({
     mine: function(){
     var that = this;
     wx.request({
-      url: bsurl + 'mine',
+      url: bsurl + '/login/refresh',
       success: function (res) {
         that.globalData.user=res.data;
         wx.setStorageSync('user',res.data)
