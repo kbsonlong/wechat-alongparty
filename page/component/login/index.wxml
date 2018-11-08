@@ -2,7 +2,7 @@
     <form bindsubmit="login">
         <view class="formc-cnt">
             <text>账号：</text>
-            <input auto-focus bindinput="textinput" data-type="1" placeholder="手机/邮箱" type="text"/>
+            <input auto-focus bindinput="textinput" data-type="1" placeholder="手机" type="text"/>
         </view>
         <view class="formc-cnt">
             <text>密码：</text>

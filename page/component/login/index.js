@@ -37,7 +37,6 @@ Page({
     wx.request({
       url: bsurl + url,
       data: {
-        email: that.data.phone,
         phone: that.data.phone,
         password: that.data.pwd
       },
