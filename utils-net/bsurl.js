@@ -1,1 +1,1 @@
-module.exports="http://localhost:3000/v1/"
+module.exports="https://music.alongparty.cn/"
