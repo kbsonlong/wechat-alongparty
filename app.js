@@ -7,7 +7,8 @@
  * 
  */
 
-
+var bsurl = require('utils-net/bsurl.js');
+var nt = require('utils-net/nt.js')
 App({
     
   onLaunch: function () {

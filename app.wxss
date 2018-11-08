@@ -632,4 +632,4 @@ radio {
 	border-radius: 50%
 }
 
-@import "utils/common.wxss"
+@import "utils-net/common.wxss"
